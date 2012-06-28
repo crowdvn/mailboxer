@@ -6,6 +6,7 @@ class CreateMailboxer < ActiveRecord::Migration
       t.column :subject, :string, :default => ""
       t.column :created_at, :datetime, :null => false
       t.column :updated_at, :datetime, :null => false
+      t.references :conversable, :polymorphic => true
     end    
   	#Receipts
     create_table :receipts do |t|
