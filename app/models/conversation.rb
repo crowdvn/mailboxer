@@ -3,6 +3,7 @@ class Conversation < ActiveRecord::Base
 
 	has_many :messages, :dependent => :destroy
 	has_many :receipts, :through => :messages
+	belongs_to :conversable, :polymorphic => true
 
 	validates_presence_of :subject
 
